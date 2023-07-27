@@ -3,14 +3,68 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "我的商城"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/goods_cate/goods_cate",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "商品分类",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/order_addcart/order_addcart",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "购物车",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#282828",
+		"selectedColor": "#ff3366",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/images/1-001.png",
+			"selectedIconPath": "static/images/1-002.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/goods_cate/goods_cate",
+			"iconPath": "static/images/2-001.png",
+			"selectedIconPath": "static/images/2-002.png",
+			"text": "商品分类"
+		}, {
+			"pagePath": "pages/order_addcart/order_addcart",
+			"iconPath": "static/images/3-001.png",
+			"selectedIconPath": "static/images/3-002.png",
+			"text": "购物车111"
+		}, {
+			"pagePath": "pages/user/index",
+			"iconPath": "static/images/4-001.png",
+			"selectedIconPath": "static/images/4-002.png",
+			"text": "我的"
+		}]
 	}
 }

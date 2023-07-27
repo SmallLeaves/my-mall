@@ -1,13 +1,13 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
+		首页
 	</view>
 </template>
 
 <script>
+	import { homeData } from "@/api/home";
+	const app = getApp();
+	
 	export default {
 		data() {
 			return {
@@ -15,35 +15,29 @@
 			}
 		},
 		onLoad() {
-
+			this._getHomeData();
 		},
 		methods: {
-
+			async _getHomeData(){
+				const {status, data, msg} = await homeData();
+				console.log("getHomeData的结果", status, data,msg);
+				console.log(this.API_STATUS_CODE)
+				if(status === this.API_STATUS_CODE.SUCCESS){
+					console.log("getHomeData的结果", data);
+					 app._initTabBar(data.tabBar.default)
+				}else{
+					console.log("请求失败")
+					uni.showToast({
+						title:msg,
+						icon:"none",
+						duration:3000
+					})
+				}
+			}
 		}
 	}
 </script>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+	
 </style>

@@ -8,6 +8,19 @@
 		},
 		onHide: function() {
 			console.log('App Hide')
+		},
+		methods:{
+			_initTabBar(menu){
+				(menu.tabBarList.list).map((item,_index) => {
+					uni.setTabBarItem({
+						index:_index,
+						text: item.name,
+						iconPath:item.imgList[0],
+						selectedIconPath:item.imgList[1],
+						pagePath:item.link
+					})
+				})
+			}
 		}
 	}
 </script>
